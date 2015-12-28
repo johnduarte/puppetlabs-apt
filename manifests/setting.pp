@@ -6,6 +6,7 @@ define apt::setting (
   $notify_update = true,
 ) {
 
+  include '::apt'
   include 'apt::params'
   if $content and $source {
     fail('apt::setting cannot have both content and source')
